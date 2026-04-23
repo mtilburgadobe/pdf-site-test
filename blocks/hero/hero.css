@@ -5,23 +5,81 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 80px 24px;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1a1449 60%, #0c073a 100%);
+  color: var(--background-color);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(137 197 100 / 18%) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-color) 33%, var(--primary-color) 33%, var(--primary-color) 66%, var(--mid-grey-color) 66%, var(--mid-grey-color) 100%);
+  z-index: 1;
+}
+
+.hero > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 800px;
+  margin: 0 0 16px;
   color: var(--background-color);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.hero h2,
+.hero h3 {
+  color: var(--accent-color);
+  margin: 8px 0;
+  font-weight: 300;
+  font-size: var(--heading-font-size-m);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: var(--body-font-size-m);
+  line-height: 1.55;
+  color: var(--background-color);
+  margin: 16px 0;
+  opacity: 0.92;
 }
 
 .hero picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   object-fit: cover;
   box-sizing: border-box;
+  opacity: 0.3;
 }
 
 .hero img {
@@ -30,8 +88,25 @@
   height: 100%;
 }
 
+.hero .button-container {
+  margin-top: 28px;
+}
+
+.hero a.button {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.hero a.button:hover {
+  background-color: var(--background-color);
+  border-color: var(--background-color);
+  color: var(--primary-color);
+}
+
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    padding: 120px 32px 100px;
+    min-height: 560px;
   }
 }
