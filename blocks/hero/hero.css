@@ -89,6 +89,14 @@ main .hero picture img {
   display: block;
 }
 
+/* DA markdown round-trip wraps picture in a <p> - neutralize it */
+.hero p:has(> picture:only-child) {
+  position: static;
+  margin: 0;
+  max-width: none;
+  opacity: 1;
+}
+
 .hero .button-container {
   margin-top: 28px;
 }
